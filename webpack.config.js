@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const publicDir = path.resolve(__dirname, "./public");
 
 module.exports = {
@@ -20,6 +21,10 @@ module.exports = {
         exclude: /node_modules/,
         use: "babel-loader",
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   plugins: [
@@ -27,5 +32,6 @@ module.exports = {
       template: publicDir + "/index.html",
       filename: "./index.html",
     }),
+    new CleanWebpackPlugin(),
   ],
 };
