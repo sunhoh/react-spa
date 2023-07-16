@@ -1,16 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import App from "./App.js";
 
-import Home from "./screen/Home.jsx";
-import About from "./screen/About.jsx";
+const initialData = window.__INITIAL_DATA__;
+const container = document.getElementById("root");
 
-import Router from "./components/Router.js";
-import Route from "./components/Route.js";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Router>
-    <Route path="/" component={<Home />} />
-    <Route path="/about" component={<About />} />
-  </Router>
-);
+ReactDOM.hydrateRoot(container, <App page={initialData} />);

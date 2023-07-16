@@ -3,7 +3,7 @@ import RouterContext from "../context/RouterContext.js";
 
 const Router = ({ children }) => {
   const [currentPath, setCurrentPath] = React.useState(
-    window.location.pathname
+    typeof window !== "undefined" ? window.location.pathname : "/"
   );
 
   React.useEffect(() => {
