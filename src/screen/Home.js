@@ -1,7 +1,7 @@
 import React from "react";
 import useRouter from "../hook/useRouter.js";
 
-const Home = () => {
+const Home = (state) => {
   const { push } = useRouter();
 
   return (

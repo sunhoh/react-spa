@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.js";
 
-const initialData = window.__INITIAL_DATA__;
 const container = document.getElementById("root");
+const initialData = window.__INITIAL_DATA__;
 
-ReactDOM.hydrateRoot(container, <App page={initialData} />);
+ReactDOM.hydrateRoot(container, <App state={initialData} />);

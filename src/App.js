@@ -11,11 +11,12 @@ const routes = [
   { path: "/about", component: About },
 ];
 
-export default function App() {
+export default function App({ state }) {
+
   return (
     <Router>
       {routes.map(({ path, component: Component }) => {
-        return <Route key={path} path={path} component={<Component />} />;
+        return <Route key={path} path={path} component={<Component state={state} />} />;
       })}
     </Router>
   );
